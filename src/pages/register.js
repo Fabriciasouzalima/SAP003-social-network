@@ -5,18 +5,16 @@ function createUserWithEmailAndPassword() {
   const name = document.querySelector('.js-email-input').value;
   const email = document.querySelector('.js-email-input').value;
   const password = document.querySelector('.js-password-input').value;
-  
-
   firebase.auth().createUserWithEmailAndPassword(email, password)
-    .then((registered) => {
-      window.location.hash = '#database';
-    })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      alert('Falha ao cadastrar ou usuário já cadastrado');
-      window.location.hash = '#home';
-    });
+  .then((registered) => {
+    window.location.hash = '#database';
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    alert('Falha ao cadastrar ou usuário já cadastrado');
+    window.location.hash = '#home';
+  });
 }
 
 function Register() {
@@ -41,7 +39,7 @@ function Register() {
     ${Button({ 
       class: 'btn-create-account', 
       title: 'Cadastre-se', 
-      onClick: createUserWithEmailAndPassword 
+      onClick: createUserWithEmailAndPassword
     })}
     <p class="login-option">Já é cadastrado? <a href="#home"><strong>Entrar!</strong></a></p>
     </form>

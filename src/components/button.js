@@ -4,11 +4,8 @@ function Button(props) {
     data-id="${props.dataId}"
     class="${props.class} primary-button"
     onclick="button.handleClick(event, ${props.onClick})" >${props.title}
-    
-    
     </button>
   `;
-
   return template;
 }
 
@@ -17,7 +14,7 @@ window.button = {
     event.preventDefault();
     callback(event);
   },
-  component: Button
+  component: Button,
 };
 
 export default Button;
