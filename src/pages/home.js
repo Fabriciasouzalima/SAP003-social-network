@@ -15,7 +15,7 @@ function signInWithEmailAndPassword() {
       const errorMessage = error.message;
       alert('Usuário não cadastrado');
       window.location.hash = '#register';
-    }); email-password.html;
+    }); email - password.html;
 }
 
 function logWithGoogle() {
@@ -26,14 +26,12 @@ function logWithGoogle() {
       window.location.hash = '#database';
       const token = result.credential.accessToken;
       const user = result.user;
-    
-    }).catch((error) => {
-    
+    })
+    .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
       const email = error.email;
       const credential = error.credential;
-    
     });
 }
 
@@ -43,36 +41,35 @@ function Home() {
     <img class="home-image" src="Images/animals.jpg">
     <form>
     <h1 class="home-title">Amigo Pet</h1>
-      
-      ${Input({
-        class: 'js-email-input',
-        placeholder: 'exemplo@exemplo.com.br',
-        type: 'email',
-      })}
-      ${Input({
-        class: 'js-password-input',
-        placeholder: 'Senha',
-        type: 'password',
-      })}
+    ${Input({
+      class: 'js-email-input',
+      placeholder: 'exemplo@exemplo.com.br',
+      type: 'email',
+    })}
+    ${Input({
+      class: 'js-password-input',
+      placeholder: 'Senha',
+      type: 'password',
+    })}
+    ${Button({
+      class: 'btn-login-account',
+      title: 'Entrar',
+      onClick: signInWithEmailAndPassword,
+    })}
+    <p class="login-option">Ou entre com:<p>
+    <div class="btn-google-line">
       ${Button({
-        class: 'btn-login-account',
-        title: 'Entrar',
-        onClick: signInWithEmailAndPassword,
-      })}
-      <p class="login-option">Ou entre com:<p>
-      <div class="btn-google-line">
-      ${Button({ 
         class: 'google',
-        title: 'G', 
-        onClick: logWithGoogle,        
+        title: 'G',
+        onClick: logWithGoogle,
       })}
-      </div>
-      <p class="login-option">Ainda não tem conta? <a href="#register"><strong>Registre-se!</strong></a></p>
+    </div>
+    <p class="login-option">Ainda não tem conta? <a href="#register"><strong>Registre-se!</strong></a></p>
     </form>
   </div>
   `;
-  
+
   return template;
 }
 
-export default Home 
+export default Home;

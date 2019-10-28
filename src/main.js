@@ -2,11 +2,10 @@ import Home from './pages/home.js';
 import Register from './pages/register.js';
 import Database from './pages/database.js';
 
-
 function pageRoute() {
   const pageName = (window.location.hash) ? window.location.hash : '#home';
-  firebase.auth().onAuthStateChanged((user) =>{
-    if(user){
+  firebase.auth().onAuthStateChanged((user) => {
+    if(user) {
       switch (pageName) {
         case '#home':
           document.querySelector('main').innerHTML = Home();
@@ -26,8 +25,8 @@ function pageRoute() {
         default:
           document.querySelector('main').innerHTML = Home();
       }
-    } else{
-        switch (pageName){
+    } else {
+        switch (pageName) {
           case '#home':
               document.querySelector('main').innerHTML = Home();
               break;

@@ -4,7 +4,7 @@ function Input(props) {
         class="${props.class} message-area"
         placeholder="${props.placeholder}"
         type="${props.type}" />
-`;
+  `;
 
   return template;
 }

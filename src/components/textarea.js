@@ -1,8 +1,11 @@
 function Textarea(props) {
-    const template = `
-        <textarea
-          class="${props.class} message-area"
-          placeholder="${props.placeholder}"
-          type="${props.type}" ></textarea>
-    `;    return template;
-  }  export default Textarea;
+  const template = `
+    <textarea
+      class="${props.class} message-area"
+      placeholder="${props.placeholder}"
+      type="${props.type}" >
+    </textarea>
+  `; return template;
+}
+
+export default Textarea;
